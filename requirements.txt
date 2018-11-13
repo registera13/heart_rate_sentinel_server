@@ -1,0 +1,15 @@
+numpy
+ipython
+matplotlib
+sphinx
+pudb
+flask
+gunicorn
+pymodm
+pytest
+pytest-pep8
+pytest-cov
+pandas
+scipy
+ipython
+jupyter
