@@ -113,7 +113,7 @@ def is_tachycardic(age, heart_rate):
             return False
 
 def send_email(patient_id, heart_rate, timestamp, attending_email):
-    sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
+    sg = sendgrid.SendGridAPIClient(apikey="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")
     from_email = Email("tachycardia_alert_server@bme590.com")
     to_email = Email(attending_email)
     subject = "Tachycardia alert for Patient ID " + str(patient_id)
