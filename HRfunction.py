@@ -1,9 +1,21 @@
 import sendgrid
-import os
 from sendgrid.helpers.mail import *
 import datetime
 from flask import Flask, jsonify, request
+from pymodm import connect
+from pymodm import MongoModel, fields
+connect("mongodb://GODUKE18:GODUKE18@ds039778.mlab.com:39778/bme590_sentinel_db")
 
+class Patient(MongoModel):
+    """
+    Create MONGODB: ID, email, age, is tachycardic?, heart rate, and time.
+    """
+    patient_id = fields.CharField(primary_key=True)
+    attending_email = fields.EmailField()
+    user_age = fields.FloatField()
+    is_tachycardic = fields.ListField(field=fields.BooleanField())
+    heart_rate = fields.ListField(field=fields.IntegerField())
+    heart_rate_time = fields.ListField(field=fields.DateTimeField())
 
 def create_patient(patient_id, attending_email, user_age):
     """
@@ -26,16 +38,15 @@ def update_heart_rate(patient_id, heart_rate):
 
     p.heart_rate_time.append(hr_timestamp)
 
-    age = p.user_age
-    tachycardic = is_tachycardic(age, heart_rate)
+    patient_age = p.user_age
+    tachycardic = is_tachycardic(patient_age, heart_rate)
     if(tachycardic):
         attending_email = str(p.attending_email)
         try:
-            send_tachycardic_email(patient_id, heart_rate, hr_timestamp,
+            send_email(patient_id, heart_rate, hr_timestamp,
                                    attending_email)
         except Exception:
-            print("Please Configure Sendgrid API Key")
-
+            print("Sendgrid error check teh api key and make sure it is installed")
     p.is_tachycardic.append(tachycardic)
     p.save()
 

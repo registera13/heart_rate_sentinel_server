@@ -37,7 +37,11 @@ def post_patient():
 
 @app.route("/api/heart_rate", methods=["POST"])
 def post_heart_rate():
-    p = request.get_json()
+    req_data = request.get_json()
+    patient_id = req_data["patient_id"]
+    heart_rate = req_data["heart_rate"]
+    update_heart_rate(patient_id, heart_rate)
+    return 200
 
 
 
