@@ -112,16 +112,20 @@ def is_tachycardic(age, heart_rate):
         else:
             return False
 
-def send_sendgrid():
+def send_email(patient_id, heart_rate, timestamp, attending_email):
     sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
-    from_email = Email("test@example.com")
-    to_email = Email("test@example.com")
-    subject = "Sending with SendGrid is Fun"
-    content = Content("text/plain", "and easy to do anywhere, even with Python")
+    from_email = Email("tachycardia_alert_server@bme590.com")
+    to_email = Email(attending_email)
+    subject = "Tachycardia alert for Patient ID " + str(patient_id)
+    content = Content("text/plain",
+                      "ALERT: Patient ID: " + patient_id + " was "
+                      "tachycardic on " + timestamp.strftime("%B %d, %Y") + " at " + timestamp.strftime("%H:%M") + " with heart "
+                      "rate of " + str(heart_rate) + " BPM.")
     mail = Mail(from_email, subject, to_email, content)
     response = sg.client.mail.send.post(request_body=mail.get())
-    print(response.status_code)
-    print(response.body)
-    print(response.headers)
+    #print(response.status_code)
+    #print(response.body)
+    #print(response.headers)
+    return response.status_code
 
 if __name__ == "__main__":
