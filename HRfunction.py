@@ -45,6 +45,26 @@ def new_patient():
     user_age = req_data["user_age"]
     create_patient(patient_id, attending_email, user_age)
 
+def update_heart_rate(patient_id, heart_rate):
+    p = Patient.objects.raw({"_id": patient_id}).first()
+
+    p.heart_rate.append(heart_rate)
+    hr_timestamp = datetime.datetime.now()
+
+    p.heart_rate_time.append(hr_timestamp)
+
+    age = p.user_age
+    tachycardic = is_tachycardic(age, heart_rate)
+    if(tachycardic):
+        attending_email = str(p.attending_email)
+        try:
+            send_tachycardic_email(patient_id, heart_rate, hr_timestamp,
+                                   attending_email)
+        except Exception:
+            print("Please Configure Sendgrid API Key")
+
+    p.is_tachycardic.append(tachycardic)
+    p.save()
 
 
 def is_tachycardic(age, heart_rate):
