@@ -1,5 +1,21 @@
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def is_tachycardic(age, heart_rate):
     """
     Determine if heart_rate is tachycardia based on the person's age
@@ -43,5 +59,3 @@ def is_tachycardic(age, heart_rate):
             return True
         else:
             return False
-
-
