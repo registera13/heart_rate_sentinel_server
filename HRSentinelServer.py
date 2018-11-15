@@ -18,7 +18,6 @@ class Patient(MongoModel):
     heart_rate_time = fields.ListField(field=fields.DateTimeField())
 
 
-
 @app.route("/api/new_patient", methods=["POST"])
 def post_patient():
     """
@@ -30,9 +29,11 @@ def post_patient():
     patient_id = req_data["patient_id"]
     attending_email = req_data["attending_email"]
     user_age = req_data["user_age"]
-    create_patient(patient_id, attending_email, user_age)
-
-
+    try:
+        create_patient(patient_id, attending_email, user_age)
+    except:
+        return jsonify({"message": "Error occurred, check your inputs"}), 400
+    return 200
 
 @app.route("/api/heart_rate", methods=["POST"])
 def post_heart_rate():
