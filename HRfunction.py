@@ -34,18 +34,6 @@ def create_patient(patient_id, attending_email, user_age):
     p.save()
     return p
 
-
-def new_patient():
-    """
-    Use create_patient input to create a the new patients
-    :return:
-    """
-    req_data = request.get_json()
-    patient_id = req_data["patient_id"]
-    attending_email = req_data["attending_email"]
-    user_age = req_data["user_age"]
-    create_patient(patient_id, attending_email, user_age)
-
 def update_heart_rate(patient_id, heart_rate):
     p = Patient.objects.raw({"_id": patient_id}).first()
 

@@ -4,10 +4,20 @@ app = Flask(__name__)
 
 
 @app.route("/api/new_patient", methods=["POST"])
-def post_new_patient():
-    p =  request.get_json()
-    Patient(patient_id=p['patient_id'], attending_email=p['attending_email'], user_age=p['user_age']).save()
-    return jsonify(p)
+def post_patient():
+    """
+    Use create_patient input to create a the new patients
+    the post the the data on to the data base
+    :return:
+    """
+    req_data = request.get_json()
+    patient_id = req_data["patient_id"]
+    attending_email = req_data["attending_email"]
+    user_age = req_data["user_age"]
+    create_patient(patient_id, attending_email, user_age)
+
+
+
 
 @app.route("/api/heart_rate", methods=["POST"])
 def post_heart_rate():
