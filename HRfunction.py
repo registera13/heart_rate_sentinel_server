@@ -3,22 +3,6 @@ import os
 from sendgrid.helpers.mail import *
 import datetime
 from flask import Flask, jsonify, request
-from pymodm import connect
-from pymodm import MongoModel, fields
-
-connect("mongodb://GODUKE18:GODUKE18@ds039778.mlab.com:39778/bme590_sentinel_db")
-
-
-class Patient(MongoModel):
-    """
-    Create MONGODB: ID, email, age, is tachycardic?, heart rate, and time.
-    """
-    patient_id = fields.CharField(primary_key=True)
-    attending_email = fields.EmailField()
-    user_age = fields.FloatField()
-    is_tachycardic = fields.ListField(field=fields.BooleanField())
-    heart_rate = fields.ListField(field=fields.IntegerField())
-    heart_rate_time = fields.ListField(field=fields.DateTimeField())
 
 
 def create_patient(patient_id, attending_email, user_age):

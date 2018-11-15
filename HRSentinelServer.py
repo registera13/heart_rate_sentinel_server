@@ -1,6 +1,22 @@
 from flask import Flask, jsonify, request
-from HRfunction import *
 app = Flask(__name__)
+from HRfunction import *
+
+from pymodm import connect
+from pymodm import MongoModel, fields
+connect("mongodb://GODUKE18:GODUKE18@ds039778.mlab.com:39778/bme590_sentinel_db")
+
+class Patient(MongoModel):
+    """
+    Create MONGODB: ID, email, age, is tachycardic?, heart rate, and time.
+    """
+    patient_id = fields.CharField(primary_key=True)
+    attending_email = fields.EmailField()
+    user_age = fields.FloatField()
+    is_tachycardic = fields.ListField(field=fields.BooleanField())
+    heart_rate = fields.ListField(field=fields.IntegerField())
+    heart_rate_time = fields.ListField(field=fields.DateTimeField())
+
 
 
 @app.route("/api/new_patient", methods=["POST"])
@@ -15,7 +31,6 @@ def post_patient():
     attending_email = req_data["attending_email"]
     user_age = req_data["user_age"]
     create_patient(patient_id, attending_email, user_age)
-
 
 
 
