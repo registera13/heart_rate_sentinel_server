@@ -31,4 +31,3 @@ def test_create_patient():
     assert P.attending_email == "alan.register@duke.edu"
     assert P.patient_id == "199"
 
-def test_
