@@ -19,4 +19,8 @@ This is linked to another file called: HRfunction.py, which contain a list of fu
 ## Features
 *  sSl for https:// are implemented at server side
 *  Mlab database was used to store patients information
+
+## DOC Website
+https://registera13.github.io/heart_rate_sentinel_server/
+
  
