@@ -104,8 +104,8 @@ def interval_average():
     heart_rate_times = p.heart_rate_time
 
     interval_avg_hr = get_interval_average_heart_rate(heart_rates,
-                                                 heart_rate_times,
-                                                 interval_timestamp)
+                                                      heart_rate_times,
+                                                      interval_timestamp)
 
     return jsonify(interval_avg_hr), 200
 
