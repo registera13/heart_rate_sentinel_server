@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="146a52d9-faa6-4d6f-9712-3e60816d7806" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/heart_rate_sentinel_server$pytest_in_test_HRfunction_py.coverage" NAME="pytest in test_HRfunction.py Coverage Results" MODIFIED="1542401408659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/heart_rate_sentinel_server$HRSentinelServer.coverage" NAME="HRSentinelServer Coverage Results" MODIFIED="1542405005047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1648056054">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.3" value="3" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="SENDGRID_API_KEY" value="2" />
+          <entry key="gitignore" value="1" />
+          <entry key="md" value="1" />
+          <entry key="py" value="15" />
+          <entry key="rst" value="5" />
+          <entry key="txt" value="1" />
+          <entry key="yml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Python" value="15" />
+          <entry key="ReST" value="5" />
+          <entry key="YAML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="md" value="1041" />
+          <entry key="py" value="4111" />
+          <entry key="rst" value="158" />
+          <entry key="txt" value="380" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Markdown" value="1041" />
+          <entry key="PLAIN_TEXT" value="380" />
+          <entry key="Python" value="4111" />
+          <entry key="ReST" value="158" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.local" value="1" />
+          <entry key="git.branch.checkout.remote" value="1" />
+          <entry key="git.branch.create.new" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>time</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="heartrate" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/hr_sentinel_server.py" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/SENDGRID_API_KEY" />
+        <option value="$PROJECT_DIR$/.pytest_cache/flaskexample.py" />
+        <option value="$PROJECT_DIR$/test_HRfunction.py" />
+        <option value="$PROJECT_DIR$/HRfunction.py" />
+        <option value="$PROJECT_DIR$/HRSentinelServer.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/sphinx/conf.py" />
+        <option value="$PROJECT_DIR$/sphinx/code.rst" />
+        <option value="$PROJECT_DIR$/sphinx/index.rst" />
+        <option value="$PROJECT_DIR$/sphinx/code2.rst" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="619" />
+    <option name="y" value="308" />
+    <option name="width" value="1813" />
+    <option name="height" value="878" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="heart_rate_sentinel_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="heart_rate_sentinel_server" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.HRSentinelServer">
+    <configuration name="HRSentinelServer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="heart_rate_sentinel_server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HRSentinelServer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_HRfunction.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="heart_rate_sentinel_server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_HRfunction.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python tests.pytest in test_HRfunction.py" />
+      <item itemvalue="Python.HRSentinelServer" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.HRSentinelServer" />
+        <item itemvalue="Python tests.pytest in test_HRfunction.py" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="146a52d9-faa6-4d6f-9712-3e60816d7806" name="Default Changelist" comment="" />
+      <created>1542133578076</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542133578076</updated>
+    </task>
+    <task id="LOCAL-00001" summary="add is_tachycardic">
+      <created>1542134377189</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542134377189</updated>
+    </task>
+    <task id="LOCAL-00002" summary="change functions">
+      <created>1542299141093</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542299141093</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add Unit test for is_tarchicardic">
+      <created>1542300047985</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1542300047985</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add travis">
+      <created>1542300167938</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1542300167938</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add patients">
+      <created>1542302553639</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1542302553639</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add sendgrid to requirement.txt">
+      <created>1542306879579</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542306879579</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add sendgrid">
+      <created>1542307492950</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1542307492950</updated>
+    </task>
+    <task id="LOCAL-00008" summary="set up sendgrid">
+      <created>1542308665602</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1542308665602</updated>
+    </task>
+    <task id="LOCAL-00009" summary="set up sendgrid">
+      <created>1542310187606</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1542310187606</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix api key">
+      <created>1542312305273</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1542312305273</updated>
+    </task>
+    <task id="LOCAL-00011" summary="create post for new user">
+      <created>1542313023750</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1542313023750</updated>
+    </task>
+    <task id="LOCAL-00012" summary="pip8">
+      <created>1542313213678</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1542313213678</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add exception to post patient">
+      <created>1542316148131</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1542316148131</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add post HR">
+      <created>1542317043011</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1542317043011</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add cal HR">
+      <created>1542379089092</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1542379089092</updated>
+    </task>
+    <task id="LOCAL-00016" summary="HR int avg">
+      <created>1542380434896</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1542380434896</updated>
+    </task>
+    <task id="LOCAL-00017" summary="update doc strings">
+      <created>1542382459475</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1542382459475</updated>
+    </task>
+    <task id="LOCAL-00018" summary="update doc strings">
+      <created>1542383559300</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1542383559300</updated>
+    </task>
+    <task id="LOCAL-00019" summary="update doc strings">
+      <created>1542384051573</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1542384051573</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix unit test">
+      <created>1542384352000</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1542384352000</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fix unit test update heart rate">
+      <created>1542386542922</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1542386542922</updated>
+    </task>
+    <task id="LOCAL-00022" summary="unit test avg hr">
+      <created>1542390126765</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1542390126765</updated>
+    </task>
+    <task id="LOCAL-00023" summary="alot of docstings">
+      <created>1542400184725</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1542400184725</updated>
+    </task>
+    <task id="LOCAL-00024" summary="pip8 fix">
+      <created>1542401331728</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1542401331728</updated>
+    </task>
+    <task id="LOCAL-00025" summary="pip8 fix">
+      <created>1542401851882</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1542401851882</updated>
+    </task>
+    <task id="LOCAL-00026" summary="add Readme instructions">
+      <created>1542405429545</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1542405429545</updated>
+    </task>
+    <task id="LOCAL-00027" summary="travis build">
+      <created>1542405795545</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1542405795545</updated>
+    </task>
+    <task id="LOCAL-00028" summary="travis build">
+      <created>1542408262331</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1542408262331</updated>
+    </task>
+    <task id="LOCAL-00029" summary="doc server">
+      <created>1542409308046</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1542409308046</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="pytest_in_test_HRfunction_py - 2018.11.16 at 11h 41m 26s.xml">
+      <configuration name="pytest in test_HRfunction.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_HRfunction_py - 2018.11.16 at 11h 41m 53s.xml">
+      <configuration name="pytest in test_HRfunction.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_HRfunction_py - 2018.11.16 at 12h 41m 03s.xml">
+      <configuration name="pytest in test_HRfunction.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_HRfunction_py - 2018.11.16 at 12h 41m 29s.xml">
+      <configuration name="pytest in test_HRfunction.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_HRfunction_py - 2018.11.16 at 15h 16m 31s.xml">
+      <configuration name="pytest in test_HRfunction.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_HRfunction_py - 2018.11.16 at 15h 40m 07s.xml">
+      <configuration name="pytest in test_HRfunction.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_HRfunction_py - 2018.11.16 at 15h 40m 23s.xml">
+      <configuration name="pytest in test_HRfunction.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_HRfunction_py - 2018.11.16 at 15h 45m 10s.xml">
+      <configuration name="pytest in test_HRfunction.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_HRfunction_py - 2018.11.16 at 15h 47m 18s.xml">
+      <configuration name="pytest in test_HRfunction.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_HRfunction_py - 2018.11.16 at 15h 50m 11s.xml">
+      <configuration name="pytest in test_HRfunction.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="619" y="308" width="1813" height="878" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11979464" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5645161" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.07332293" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16693678" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3299293" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add is_tachycardic" />
+    <MESSAGE value="change functions" />
+    <MESSAGE value="Add Unit test for is_tarchicardic" />
+    <MESSAGE value="Add travis" />
+    <MESSAGE value="add patients" />
+    <MESSAGE value="add sendgrid to requirement.txt" />
+    <MESSAGE value="add sendgrid" />
+    <MESSAGE value="set up sendgrid" />
+    <MESSAGE value="Fix api key" />
+    <MESSAGE value="create post for new user" />
+    <MESSAGE value="pip8" />
+    <MESSAGE value="add exception to post patient" />
+    <MESSAGE value="add post HR" />
+    <MESSAGE value="add cal HR" />
+    <MESSAGE value="HR int avg" />
+    <MESSAGE value="update doc strings" />
+    <MESSAGE value="fix unit test" />
+    <MESSAGE value="fix unit test update heart rate" />
+    <MESSAGE value="unit test avg hr" />
+    <MESSAGE value="alot of docstings" />
+    <MESSAGE value="pip8 fix" />
+    <MESSAGE value="add Readme instructions" />
+    <MESSAGE value="travis build" />
+    <MESSAGE value="doc server" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc server" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/hr_sentinel_server.py" />
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.pytest_cache/flaskexample.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" column="24" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENDGRID_API_KEY">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_HRfunction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1150">
+          <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="17">
+            <caret line="1" column="158" selection-start-line="1" selection-start-column="158" selection-end-line="1" selection-end-column="158" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HRfunction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="12" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HRSentinelServer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-714" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sphinx/code.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sphinx/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+          <folding>
+            <element signature="e#564#573#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sphinx/code2.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sphinx/index.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+  </component>
+</project>
