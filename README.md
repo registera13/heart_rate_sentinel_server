@@ -1,4 +1,5 @@
 # heart_rate_sentinel_server
+[![Build Status](https://travis-ci.com/registera13/heart_rate_sentinel_server.svg?branch=master)](https://travis-ci.com/registera13/heart_rate_sentinel_server)
 Created by Alan Register (azr3) for BME 590 server assignment 
 
 ## SERVER USAGE
