@@ -1,0 +1,182 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HRSentinelServer.py &#8212; HR_Server_Documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="HRfunction.py" href="code.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-HRSentinelServer">
+<span id="hrsentinelserver-py"></span><h1>HRSentinelServer.py<a class="headerlink" href="#module-HRSentinelServer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="HRSentinelServer.Patient">
+<em class="property">class </em><code class="descclassname">HRSentinelServer.</code><code class="descname">Patient</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#HRSentinelServer.Patient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create MONGODB: ID, email, age, is tachycardic?, heart rate, and time.</p>
+<dl class="exception">
+<dt id="HRSentinelServer.Patient.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#HRSentinelServer.Patient.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="exception">
+<dt id="HRSentinelServer.Patient.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#HRSentinelServer.Patient.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="HRSentinelServer.average_heart_rate">
+<code class="descclassname">HRSentinelServer.</code><code class="descname">average_heart_rate</code><span class="sig-paren">(</span><em>patient_id</em><span class="sig-paren">)</span><a class="headerlink" href="#HRSentinelServer.average_heart_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Webservice to calculate the average heart rate of a patient using from data base
+:param patient_id: patient id string
+:return: average heart rate in json</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HRSentinelServer.get_db_heart_rate">
+<code class="descclassname">HRSentinelServer.</code><code class="descname">get_db_heart_rate</code><span class="sig-paren">(</span><em>patient_id</em><span class="sig-paren">)</span><a class="headerlink" href="#HRSentinelServer.get_db_heart_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Webservice to get the patient’s heart rate from database
+:param patient_id: patient id string
+:return: list of heart rate, status code</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HRSentinelServer.hello">
+<code class="descclassname">HRSentinelServer.</code><code class="descname">hello</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HRSentinelServer.hello" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the string to the caller this act as a test</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HRSentinelServer.interval_average">
+<code class="descclassname">HRSentinelServer.</code><code class="descname">interval_average</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HRSentinelServer.interval_average" title="Permalink to this definition">¶</a></dt>
+<dd><p>Webservice to calculate the average heart rate of a patient
+that is after a timestamp period using from data base.
+:return: average heart rate since interval in json</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HRSentinelServer.patient_status">
+<code class="descclassname">HRSentinelServer.</code><code class="descname">patient_status</code><span class="sig-paren">(</span><em>patient_id</em><span class="sig-paren">)</span><a class="headerlink" href="#HRSentinelServer.patient_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Webservice to get the status of the patients status of the patients
+:param patient_id: patient id string
+:return: status dictionary, status code</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HRSentinelServer.post_heart_rate">
+<code class="descclassname">HRSentinelServer.</code><code class="descname">post_heart_rate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HRSentinelServer.post_heart_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Webservice  that post heart rate to database based on the the patient id
+:return:status code</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HRSentinelServer.post_patient">
+<code class="descclassname">HRSentinelServer.</code><code class="descname">post_patient</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HRSentinelServer.post_patient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Webservice  that use create_patient input to create a the new patients
+the post the the data on to the data base
+:return: status code</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">HR_Server_Documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Server:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code.html">HRfunction.py</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Functions:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">HRSentinelServer.py</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="code.html" title="previous chapter">HRfunction.py</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Alan Register.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/code2.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
