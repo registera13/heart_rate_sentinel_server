@@ -19,6 +19,14 @@ class Patient(MongoModel):
     heart_rate_time = fields.ListField(field=fields.DateTimeField())
 
 
+@app.route("/hello", methods=["GET"])
+def hello():
+    """
+    Returns the string to the caller this act as a test
+    """
+    return "Hello, BME 580 Heart Rate Server is Working"
+
+
 @app.route("/api/new_patient", methods=["POST"])
 def post_patient():
     """
