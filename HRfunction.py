@@ -10,12 +10,18 @@ connect("mongodb://GODUKE18:GODUKE18@ds039778.mlab.com:39778/bme590_sentinel_db"
 class Patient(MongoModel):
     """
     Create MONGODB: ID, email, age, is tachycardic?, heart rate, and time.
+    Patient_id:(str)
+    attending_email:(str)
+    user_age:(Float)
+    is_tachycardic(Boolean list)
+    heart_rate:(float list)
+    heart_rate_time:(list datatimefield format)
     """
     patient_id = fields.CharField(primary_key=True)
     attending_email = fields.EmailField()
     user_age = fields.FloatField()
     is_tachycardic = fields.ListField(field=fields.BooleanField())
-    heart_rate = fields.ListField(field=fields.IntegerField())
+    heart_rate = fields.ListField(field=fields.FloatField())
     heart_rate_time = fields.ListField(field=fields.DateTimeField())
 
 
