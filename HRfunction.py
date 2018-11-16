@@ -2,7 +2,6 @@ import sendgrid
 import os
 from sendgrid.helpers.mail import *
 import datetime
-from flask import Flask, jsonify, request
 from pymodm import connect
 from pymodm import MongoModel, fields
 connect("mongodb://GODUKE18:GODUKE18@ds039778.mlab.com:39778/bme590_sentinel_db")
@@ -57,11 +56,11 @@ def update_heart_rate(patient_id, heart_rate):
 
     patient_age = p.user_age
     tachycardic = is_tachycardic(patient_age, heart_rate)
-    if(tachycardic):
+    if tachycardic:
         attending_email = str(p.attending_email)
         try:
             send_email(patient_id, heart_rate, hr_timestamp,
-                                   attending_email)
+                       attending_email)
         except Exception:
             print("Sendgrid error check api key and make sure it is installed")
     p.is_tachycardic.append(tachycardic)
@@ -182,8 +181,7 @@ def send_email(patient_id, heart_rate, timestamp, attending_email):
                       " with heart rate: " + str(heart_rate) + " BPM.")
     mail = Mail(from_email, subject, to_email, content)
     response = sg.client.mail.send.post(request_body=mail.get())
-    #print(response.status_code)
-    #print(response.body)
-    #print(response.headers)
+    # print(response.status_code)
+    # print(response.body)
+    # print(response.headers)
     return response.status_code
-
