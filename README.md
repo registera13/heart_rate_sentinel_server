@@ -5,8 +5,8 @@ Created by Alan Register (azr3) for BME 590 server assignment
 ## SERVER USAGE
 a ubuntu vm to run this flask server was created on vcm-7319.vm.duke.edu
 
-Server address is https://vcm-7319.vm.duke.edu:5000/. To check if the server is running please input this address in 
-your web browser: https://vcm-7319.vm.duke.edu:5000/hello.
+Server address is https://vcm-7319.vm.duke.edu/. To check if the server is running please input this address in 
+your web browser: https://vcm-7319.vm.duke.edu/hello.
 
 If the server is working then you can proceed to api POST and GET request. 
 
