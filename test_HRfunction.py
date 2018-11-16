@@ -25,3 +25,18 @@ def test_is_tachycardic(age, heart_rate, expected):
     """
     assert is_tachycardic(age, heart_rate) == expected
 
+
+def test_create_patient():
+    p = create_patient("199", "alan.regsiter@duke.edu", 23)
+    assert p.user_age == 23
+    assert p.attending_email == "alan.regsiter@duke.edu"
+    assert p.patient_id == "199"
+
+
+def test_update_heart_rate():
+    update_heart_rate("199", 120)
+    hr = get_heart_rate("199")
+    assert hr[-1] == 120
+
+
+

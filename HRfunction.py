@@ -1,22 +1,27 @@
-import os
 import sendgrid
+from sendgrid.helpers.mail import *
 import datetime
 from flask import Flask, jsonify, request
 from pymodm import connect
 from pymodm import MongoModel, fields
-
 connect("mongodb://GODUKE18:GODUKE18@ds039778.mlab.com:39778/bme590_sentinel_db")
 
 
 class Patient(MongoModel):
     """
     Create MONGODB: ID, email, age, is tachycardic?, heart rate, and time.
+    Patient_id:(str)
+    attending_email:(str)
+    user_age:(Float)
+    is_tachycardic(Boolean list)
+    heart_rate:(float list)
+    heart_rate_time:(list datatimefield format)
     """
     patient_id = fields.CharField(primary_key=True)
     attending_email = fields.EmailField()
     user_age = fields.FloatField()
     is_tachycardic = fields.ListField(field=fields.BooleanField())
-    heart_rate = fields.ListField(field=fields.IntegerField())
+    heart_rate = fields.ListField(field=fields.FloatField())
     heart_rate_time = fields.ListField(field=fields.DateTimeField())
 
 
@@ -34,17 +39,52 @@ def create_patient(patient_id, attending_email, user_age):
     return p
 
 
-def new_patient():
-    """
-    Use create_patient input to create a the new patients
-    :return:
-    """
-    req_data = request.get_json()
-    patient_id = req_data["patient_id"]
-    attending_email = req_data["attending_email"]
-    user_age = req_data["user_age"]
-    create_patient(patient_id, attending_email, user_age)
+def update_heart_rate(patient_id, heart_rate):
+    p = Patient.objects.raw({"_id": patient_id}).first()
 
+    p.heart_rate.append(heart_rate)
+    hr_timestamp = datetime.datetime.now()
+
+    p.heart_rate_time.append(hr_timestamp)
+
+    patient_age = p.user_age
+    tachycardic = is_tachycardic(patient_age, heart_rate)
+    if(tachycardic):
+        attending_email = str(p.attending_email)
+        try:
+            send_email(patient_id, heart_rate, hr_timestamp,
+                                   attending_email)
+        except Exception:
+            print("Sendgrid error check teh api key and make sure it is installed")
+    p.is_tachycardic.append(tachycardic)
+    p.save()
+
+
+def get_heart_rate(patient_id):
+    r = Patient.objects.raw({"_id": patient_id}).first()
+    heart_rates = r.heart_rate
+    return heart_rates
+
+
+def cal_average_heart_rate(heart_rate):
+    avg_hr = sum(heart_rate)/len(heart_rate)
+    return avg_hr
+
+
+def get_status(patient_id):
+    r = Patient.objects.raw({"_id": patient_id}).first()
+    output_dict = {}
+    output_dict["is_tachycardic"] = r.is_tachycardic[-1]
+    output_dict["timestamp"] = r.heart_rate_time[-1]
+    print(output_dict)
+    return output_dict
+
+
+def get_interval_average_heart_rate(heart_rates, heart_rate_times, heart_rate_average_since):
+    index_list = [index for index, time in enumerate(heart_rate_times) if time >= heart_rate_average_since]
+    heart_rates_interval = [heart_rates[i] for i in index_list]
+    hr_int_avg = sum(heart_rates_interval)/len(heart_rates_interval)
+    return hr_int_avg
 
 
 def is_tachycardic(age, heart_rate):
@@ -91,4 +131,20 @@ def is_tachycardic(age, heart_rate):
         else:
             return False
 
-if __name__ == "__main__":
+
+def send_email(patient_id, heart_rate, timestamp, attending_email):
+    sg = sendgrid.SendGridAPIClient(apikey="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")
+    from_email = Email("tachycardia_alert_server@bme590.com")
+    to_email = Email(attending_email)
+    subject = "Tachycardia alert for Patient ID " + str(patient_id)
+    content = Content("text/plain",
+                      "ALERT: Patient ID: " + patient_id + " was "
+                      "tachycardic on " + timestamp.strftime("%B %d, %Y") + " at " + timestamp.strftime("%H:%M") +
+                      " with heart rate: " + str(heart_rate) + " BPM.")
+    mail = Mail(from_email, subject, to_email, content)
+    response = sg.client.mail.send.post(request_body=mail.get())
+    #print(response.status_code)
+    #print(response.body)
+    #print(response.headers)
+    return response.status_code
+

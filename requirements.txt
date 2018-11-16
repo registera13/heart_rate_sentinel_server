@@ -13,3 +13,4 @@ pandas
 scipy
 ipython
 jupyter
+sendgrid
