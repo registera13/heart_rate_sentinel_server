@@ -3,18 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to HR_Server_Documentation's documentation!
+Welcome to HR_Server_Documentation!
 ===================================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Server:
 
+   code
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Functions:
 
-Indices and tables
-==================
+   code2
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
