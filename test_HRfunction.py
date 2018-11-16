@@ -1,4 +1,5 @@
 import pytest
+import datetime
 from HRfunction import *
 
 
@@ -39,4 +40,30 @@ def test_update_heart_rate():
     assert hr[-1] == 120
 
 
+def test_cal_average_heart_rate():
+    update_heart_rate("199", 122)
+    hr = get_heart_rate("199")
+    assert cal_average_heart_rate(hr) == 121
 
+
+def test_get_interval_average_heart_rate():
+    heart_rates = [100, 150, 200, 100]
+    time = datetime.datetime.now()
+    heart_rates_time = [time-datetime.timedelta(minutes=2),
+                        time,
+                        time+datetime.timedelta(minutes=2),
+                        time+datetime.timedelta(seconds=2)
+                        ]
+    avg_hr = get_interval_average_heart_rate(heart_rates, heart_rates_time, time)
+    assert avg_hr == (150+200+100)/3
+
+
+def test_get_status():
+    r = get_status("199")
+    assert r["is_tachycardic"] is True
+    assert r["timestamp"] <= datetime.datetime.now()
+
+
+def test_get_heart_rate():
+    hr = get_heart_rate("199")
+    assert hr[-1] == 122

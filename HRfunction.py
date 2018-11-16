@@ -1,4 +1,5 @@
 import sendgrid
+import os
 from sendgrid.helpers.mail import *
 import datetime
 from flask import Flask, jsonify, request
@@ -40,6 +41,13 @@ def create_patient(patient_id, attending_email, user_age):
 
 
 def update_heart_rate(patient_id, heart_rate):
+    """
+    Create timestamp using the following methods
+    https://stackoverflow.com/questions/13890935/does-pythons-time-time-return-the-local-or-utc-timestamp
+    :param patient_id: patient id NUM ex(1,2,3)
+    :param heart_rate: float
+    :return:
+    """
     p = Patient.objects.raw({"_id": patient_id}).first()
 
     p.heart_rate.append(heart_rate)
@@ -55,23 +63,39 @@ def update_heart_rate(patient_id, heart_rate):
             send_email(patient_id, heart_rate, hr_timestamp,
                                    attending_email)
         except Exception:
-            print("Sendgrid error check teh api key and make sure it is installed")
+            print("Sendgrid error check api key and make sure it is installed")
     p.is_tachycardic.append(tachycardic)
     p.save()
 
 
 def get_heart_rate(patient_id):
+    """
+    Get heart rate list from DB
+    :param patient_id: patient id NUM ex(1,2,3)
+    :return: heart rate in list
+    """
     r = Patient.objects.raw({"_id": patient_id}).first()
     heart_rates = r.heart_rate
     return heart_rates
 
 
 def cal_average_heart_rate(heart_rate):
+    """
+    Calculate the mean/average of the heart rate list
+    :param heart_rate: list of heart rates
+    :return: avg HR float
+    """
     avg_hr = sum(heart_rate)/len(heart_rate)
     return avg_hr
 
 
 def get_status(patient_id):
+    """
+    get the status of the patients based on his/her heart rate and age, and
+    status will be if he/her is tachyardic or not
+    :param patient_id: patient id NUM ex(1,2,3)
+    :return: True or False for tachycardic then the timestamp
+    """
     r = Patient.objects.raw({"_id": patient_id}).first()
     output_dict = {}
     output_dict["is_tachycardic"] = r.is_tachycardic[-1]
@@ -81,6 +105,13 @@ def get_status(patient_id):
 
 
 def get_interval_average_heart_rate(heart_rates, heart_rate_times, heart_rate_average_since):
+    """
+    Find the average heart rate from a given time interval in timestamp
+    :param heart_rates: float heart rate
+    :param heart_rate_times: timestamp
+    :param heart_rate_average_since: timestamp from jason
+    :return: float avg heart rate of the given interval
+    """
     index_list = [index for index, time in enumerate(heart_rate_times) if time >= heart_rate_average_since]
     heart_rates_interval = [heart_rates[i] for i in index_list]
     hr_int_avg = sum(heart_rates_interval)/len(heart_rates_interval)
@@ -133,7 +164,15 @@ def is_tachycardic(age, heart_rate):
 
 
 def send_email(patient_id, heart_rate, timestamp, attending_email):
-    sg = sendgrid.SendGridAPIClient(apikey="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")
+    """
+    Send email using sendgrid server
+    :param patient_id: str
+    :param heart_rate: float
+    :param timestamp: str, Date/time ex(2012-12-15 11:15:24.984000)
+    :param attending_email: 'example@duke.edu'
+    :return: status code
+    """
+    sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
     from_email = Email("tachycardia_alert_server@bme590.com")
     to_email = Email(attending_email)
     subject = "Tachycardia alert for Patient ID " + str(patient_id)
