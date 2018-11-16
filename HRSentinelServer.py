@@ -66,8 +66,22 @@ def average_heart_rate(patient_id):
     return jsonify(avg_hr), 200
 
 @app.route("/api/heart_rate/interval_average", methods=["POST"])
+def interval_average():
+    req_data = request.get_json()
+    patient_id = req_data["patient_id"]
+    heart_rate_average_since = req_data["heart_rate_average_since"]
 
+    interval_timestamp = datetime.datetime.strptime(
+        heart_rate_average_since, '%Y-%m-%d %H:%M:%S.%f')
+    heart_rates = get_heart_rate(patient_id)
+    p = Patient.objects.raw({"_id": patient_id}).first()
+    heart_rate_times = p.heart_rate_time
 
+    interval_avg_hr = get_interval_average_heart_rate(heart_rates,
+                                                 heart_rate_times,
+                                                 interval_timestamp)
+
+    return jsonify(interval_avg_hr), 200
 
 
 if __name__ == "__main__":

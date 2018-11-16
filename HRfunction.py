@@ -74,6 +74,13 @@ def get_status(patient_id):
     return output_dict
 
 
+def get_interval_average_heart_rate(heart_rates, heart_rate_times, heart_rate_average_since):
+    index_list = [index for index, time in enumerate(heart_rate_times) if time >= heart_rate_average_since]
+    heart_rates_interval = [heart_rates[i] for i in index_list]
+    hr_int_avg = sum(heart_rates_interval)/len(heart_rates_interval)
+    return hr_int_avg
+
+
 def is_tachycardic(age, heart_rate):
     """
     Determine if heart_rate is tachycardia based on the person's age
@@ -126,8 +133,8 @@ def send_email(patient_id, heart_rate, timestamp, attending_email):
     subject = "Tachycardia alert for Patient ID " + str(patient_id)
     content = Content("text/plain",
                       "ALERT: Patient ID: " + patient_id + " was "
-                      "tachycardic on " + timestamp.strftime("%B %d, %Y") + " at " + timestamp.strftime("%H:%M") + " with heart "
-                      "rate of " + str(heart_rate) + " BPM.")
+                      "tachycardic on " + timestamp.strftime("%B %d, %Y") + " at " + timestamp.strftime("%H:%M") +
+                      " with heart rate: " + str(heart_rate) + " BPM.")
     mail = Mail(from_email, subject, to_email, content)
     response = sg.client.mail.send.post(request_body=mail.get())
     #print(response.status_code)
