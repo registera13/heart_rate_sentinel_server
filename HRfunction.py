@@ -40,6 +40,13 @@ def create_patient(patient_id, attending_email, user_age):
 
 
 def update_heart_rate(patient_id, heart_rate):
+    """
+    Create timestamp using the following methods
+    https://stackoverflow.com/questions/13890935/does-pythons-time-time-return-the-local-or-utc-timestamp
+    :param patient_id:
+    :param heart_rate:
+    :return:
+    """
     p = Patient.objects.raw({"_id": patient_id}).first()
 
     p.heart_rate.append(heart_rate)
@@ -55,7 +62,7 @@ def update_heart_rate(patient_id, heart_rate):
             send_email(patient_id, heart_rate, hr_timestamp,
                                    attending_email)
         except Exception:
-            print("Sendgrid error check teh api key and make sure it is installed")
+            print("Sendgrid error check api key and make sure it is installed")
     p.is_tachycardic.append(tachycardic)
     p.save()
 
@@ -133,6 +140,14 @@ def is_tachycardic(age, heart_rate):
 
 
 def send_email(patient_id, heart_rate, timestamp, attending_email):
+    """
+    Send email using sendgrid server
+    :param patient_id: str
+    :param heart_rate: float
+    :param timestamp: str, Date/time ex(2012-12-15 11:15:24.984000)
+    :param attending_email: 'example@duke.edu'
+    :return: status code
+    """
     sg = sendgrid.SendGridAPIClient(apikey="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")
     from_email = Email("tachycardia_alert_server@bme590.com")
     to_email = Email(attending_email)

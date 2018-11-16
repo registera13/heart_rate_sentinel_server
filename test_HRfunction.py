@@ -39,4 +39,12 @@ def test_update_heart_rate():
     assert hr[-1] == 120
 
 
+def test_cal_average_heart_rate():
+    update_heart_rate("199", 122)
+    hr = get_heart_rate("199")
+    assert cal_average_heart_rate(hr) == 121
+
+
+
+
 
