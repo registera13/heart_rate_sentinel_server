@@ -6,6 +6,7 @@ from pymodm import connect
 from pymodm import MongoModel, fields
 connect("mongodb://GODUKE18:GODUKE18@ds039778.mlab.com:39778/bme590_sentinel_db")
 
+
 class Patient(MongoModel):
     """
     Create MONGODB: ID, email, age, is tachycardic?, heart rate, and time.
@@ -16,6 +17,7 @@ class Patient(MongoModel):
     is_tachycardic = fields.ListField(field=fields.BooleanField())
     heart_rate = fields.ListField(field=fields.IntegerField())
     heart_rate_time = fields.ListField(field=fields.DateTimeField())
+
 
 def create_patient(patient_id, attending_email, user_age):
     """
@@ -29,6 +31,7 @@ def create_patient(patient_id, attending_email, user_age):
                 user_age=user_age)
     p.save()
     return p
+
 
 def update_heart_rate(patient_id, heart_rate):
     p = Patient.objects.raw({"_id": patient_id}).first()
@@ -49,6 +52,26 @@ def update_heart_rate(patient_id, heart_rate):
             print("Sendgrid error check teh api key and make sure it is installed")
     p.is_tachycardic.append(tachycardic)
     p.save()
+
+
+def get_heart_rate(patient_id):
+    r = Patient.objects.raw({"_id": patient_id}).first()
+    heart_rates = r.heart_rate
+    return heart_rates
+
+
+def cal_average_heart_rate(heart_rate):
+    avg_hr = sum(heart_rate)/len(heart_rate)
+    return avg_hr
+
+
+def get_status(patient_id):
+    r = Patient.objects.raw({"_id": patient_id}).first()
+    output_dict = {}
+    output_dict["is_tachycardic"] = r.is_tachycardic[-1]
+    output_dict["timestamp"] = r.heart_rate_time[-1]
+    print(output_dict)
+    return output_dict
 
 
 def is_tachycardic(age, heart_rate):
@@ -95,6 +118,7 @@ def is_tachycardic(age, heart_rate):
         else:
             return False
 
+
 def send_email(patient_id, heart_rate, timestamp, attending_email):
     sg = sendgrid.SendGridAPIClient(apikey="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")
     from_email = Email("tachycardia_alert_server@bme590.com")
@@ -111,4 +135,3 @@ def send_email(patient_id, heart_rate, timestamp, attending_email):
     #print(response.headers)
     return response.status_code
 
-if __name__ == "__main__":
