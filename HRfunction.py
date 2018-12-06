@@ -95,12 +95,15 @@ def get_status(patient_id):
     :param patient_id: patient id NUM ex(1,2,3)
     :return: True or False for tachycardic then the timestamp
     """
-    r = Patient.objects.raw({"_id": patient_id}).first()
-    output_dict = {}
-    output_dict["is_tachycardic"] = r.is_tachycardic[-1]
-    output_dict["timestamp"] = r.heart_rate_time[-1]
-    print(output_dict)
-    return output_dict
+    try:
+        p = Patient.objects.raw({"_id": patient_id}).first()
+        output_dict = {}
+        output_dict["is_tachycardic"] = p.is_tachycardic[-1]
+        output_dict["timestamp"] = p.heart_rate_time[-1]
+        return output_dict
+    except:
+        print("Invalid patient ID")
+        logging.error("Invalid patient ID.")
 
 
 def get_interval_average_heart_rate(heart_rates, heart_rate_times, heart_rate_average_since):

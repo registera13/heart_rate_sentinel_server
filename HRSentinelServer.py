@@ -67,7 +67,7 @@ def patient_status(patient_id):
     """
     status = get_status(patient_id)
     print(status)
-    return status, 200
+    return jsonify(status), 200
 
 
 @app.route("/api/heart_rate/<patient_id>", methods=["GET"])
